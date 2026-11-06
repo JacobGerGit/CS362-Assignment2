@@ -1,2 +1,2 @@
-def checkPassword(pw: str):
+def check_pwd(pw: str) -> bool:
     pass

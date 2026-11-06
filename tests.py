@@ -1,5 +1,5 @@
 import unittest
-from check_pwd import checkPassword
+from check_pwd import check_pwd
 
 class TestCheckPassword(unittest.TestCase):
     pass
