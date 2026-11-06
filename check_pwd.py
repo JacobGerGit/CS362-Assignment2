@@ -11,10 +11,13 @@ Other symbols may be present, but they won't satisfy this requirement.
 def check_pwd(pw: str) -> bool:
     if 8 <= len(pw) <= 20:
         containsCapital = False
+        containsLower = False
         for letter in pw:
             if letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
                 containsCapital = True
-        if not containsCapital:
+            if letter in "abcdefghijklmnopqrstuvwxyz":
+                containsLower = True
+        if not containsCapital or not containsLower:
             return False
         return True
 
