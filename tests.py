@@ -47,5 +47,25 @@ class TestCheckPassword(unittest.TestCase):
         expected = True
         self.assertEqual(check_pwd(input), expected)
 
+    def test8(self):
+        input = "aaaaA1!@aaaaA1!@aaaaA1!@"
+        expected = False
+        self.assertEqual(check_pwd(input), expected)
+
+    def test9(self):
+        input = "aaaaA1!@aaaaA1!@aaaa"
+        expected = True
+        self.assertEqual(check_pwd(input), expected)
+
+    def test10(self):
+        input = "aaaaA1!@aaaaA1!@aaaa!"
+        expected = False
+        self.assertEqual(check_pwd(input), expected)
+
+    def test11(self):
+        input = "aaaaA1!"
+        expected = False
+        self.assertEqual(check_pwd(input), expected)
+
 if __name__ == '__main__':
     unittest.main()
