@@ -13,6 +13,7 @@ def check_pwd(pw: str) -> bool:
         containsCapital = False
         containsLower = False
         containsDigit = False
+        containsSymbol = False
         for char in pw:
             if char in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
                 containsCapital = True
@@ -20,7 +21,9 @@ def check_pwd(pw: str) -> bool:
                 containsLower = True
             if char in "0123456789":
                 containsDigit = True
-        if not containsCapital or not containsLower or not containsDigit:
+            if char in "~`!@#$%^&*()_+-=":
+                containsSymbol = True
+        if not containsCapital or not containsLower or not containsDigit or not containsSymbol:
             return False
         return True
 
