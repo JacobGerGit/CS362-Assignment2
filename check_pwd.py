@@ -12,12 +12,15 @@ def check_pwd(pw: str) -> bool:
     if 8 <= len(pw) <= 20:
         containsCapital = False
         containsLower = False
-        for letter in pw:
-            if letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+        containsDigit = False
+        for char in pw:
+            if char in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
                 containsCapital = True
-            if letter in "abcdefghijklmnopqrstuvwxyz":
+            if char in "abcdefghijklmnopqrstuvwxyz":
                 containsLower = True
-        if not containsCapital or not containsLower:
+            if char in "0123456789":
+                containsDigit = True
+        if not containsCapital or not containsLower or not containsDigit:
             return False
         return True
 
