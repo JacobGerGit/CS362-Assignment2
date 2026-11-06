@@ -23,9 +23,6 @@ def check_pwd(pw: str) -> bool:
                 containsDigit = True
             if char in "~`!@#$%^&*()_+-=":
                 containsSymbol = True
-        if not containsCapital or not containsLower or not containsDigit or not containsSymbol:
-            return False
-        return True
-
+        return containsCapital and containsLower and containsDigit and containsSymbol
     else:
         return False
