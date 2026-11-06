@@ -9,5 +9,7 @@ Other symbols may be present, but they won't satisfy this requirement.
 """
 
 def check_pwd(pw: str) -> bool:
-    if 8 >= len(pw) <= 20:
+    if 8 <= len(pw) <= 20:
+        return True
+    else:
         return False
